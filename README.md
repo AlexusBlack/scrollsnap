@@ -2,7 +2,7 @@
 ## Minimalistic customisable fullPage.js replacement
 
 It just works. Scroll your mouse over the container to navigate between items.
-It is dead simple and only ~50 lines if code that are easily customisable.
+It is dead simple and only ~50 lines if code that are easily customisable. No dependencies.
 
 ## [Demo](https://alexuslab.com/scrollsnap/)
 
@@ -45,7 +45,11 @@ let scrollSnap = document.querySelector('.scroll-snap');
 console.log(scrollSnap.getAttribute('current-item'));
 // this is how you set current item
 scrollSnap.setAttribute('current-item', 2);
+```
 
+### Initialize dynamically added scroll snap
+```js
+initScrollSnap(newScrollSnapDOMNode);
 ```
 
 ### Increase max items limit
