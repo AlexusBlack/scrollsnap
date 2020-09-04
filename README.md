@@ -4,7 +4,7 @@
 It just works. Scroll your mouse over the container to navigate between items.
 It is dead simple and only ~50 lines if code that are easily customisable.
 
-## Demo - index.html
+## [Demo](https://alexuslab.com/scrollsnap/)
 
 ## Use & Install
 Drop 
