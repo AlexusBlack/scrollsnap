@@ -2,7 +2,7 @@
 ## Minimalistic customisable fullPage.js replacement
 
 It just works. Scroll your mouse over the container to navigate between items.
-It is dead simple and only ~50 lines if code that are easily customisable. No dependencies.
+It is dead simple and only ~50 lines of code that are easily customisable. No dependencies.
 
 ## [Demo](https://alexuslab.com/scrollsnap/)
 
@@ -15,7 +15,7 @@ Drop
     <div class="scroll-snap__item">Item 3</div>
 </div>
 ```
-code wherever you need in you markup. 
+code wherever you need in your markup. 
 Link `scrollsnap.css` in your header and `scrollsnap.js` before end of body tag. 
 
 ## Help tips
@@ -57,4 +57,13 @@ There is max of 9 items supported in code by default. If you need more you might
 ```css
 *:nth-child(10) { --nth-child-idx: 10; }
 .scroll-snap[active-item="10"] { --active-item: 10; }
+```
+
+### Track change of active item
+```js
+const scrollSnap = document.querySelector('.scroll-snap');
+const observer = new MutationObserver(function() {
+    console.log(scrollSnap.getAttribute('active-item'));
+});
+observer.observe(scrollSnap, { attributes: true, attributeFilter: ['active-item']});
 ```
