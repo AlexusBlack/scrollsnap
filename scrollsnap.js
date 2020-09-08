@@ -1,11 +1,20 @@
 (function() {
     window.initScrollSnap = function(s) {
         let inTransition = false;
+        let inScroll = false;
+        let inScrollTimer = null;
         s.addEventListener('wheel', async function(e) {
             // preventing regular scroll
             e.preventDefault();
+            // resetting scroll timeout as scroll still goes on
+            clearTimeout(inScrollTimer);
+            inScrollTimer = setTimeout(function() {
+                inScroll = false;
+            }, 150);
             // if active transition in progress - doing nothing
-            if(inTransition) return;
+            // if scrolling still happenning (inertia) - doing nothing
+            if(inTransition || inScroll) return;
+            inScroll = true;
 
             let currentItem = parseInt(s.getAttribute('active-item'));
             let itemsCount = s.children.length;
