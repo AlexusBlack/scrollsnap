@@ -4,6 +4,7 @@
         let inScroll = false;
         let inScrollTimer = null;
         const handler = async function(e, deltaY) {
+            if(s.classList.contains('scroll-snap--disabled')) return;
             // preventing regular scroll or touch drag
             e.preventDefault();
             // resetting scroll timeout as scroll still goes on
