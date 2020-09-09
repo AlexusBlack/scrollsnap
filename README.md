@@ -18,7 +18,7 @@ Drop
 code wherever you need in your markup. 
 Link `scrollsnap.css` in your header and `scrollsnap.js` before end of body tag. 
 
-## Help tips
+## Recipes
 
 ### Make Full Screen
 ```css
